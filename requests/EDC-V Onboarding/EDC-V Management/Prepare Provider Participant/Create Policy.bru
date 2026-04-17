@@ -1,13 +1,17 @@
 meta {
   name: Create Policy
   type: http
-  seq: 3
+  seq: 4
 }
 
 post {
-  url: {{cpBaseUrl}}/api/mgmt/v5beta/participants/{{provider_id}}/policydefinitions
+  url: {{hostname}}/api/mgmt/v5alpha/participants/{{provider_id}}/policydefinitions
   body: json
   auth: inherit
+}
+
+headers {
+  Host: {{cpBaseUrl}}
 }
 
 body:json {

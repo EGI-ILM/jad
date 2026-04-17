@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{tmBaseUrl}}/api/v1alpha1/dataspace-profiles
+  url: {{hostname}}/api/v1alpha1/dataspace-profiles
   body: json
   auth: inherit
+}
+
+headers {
+  Host: {{tmBaseUrl}}
 }
 
 script:post-response {

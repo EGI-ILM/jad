@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{tmBaseUrl}}/api/v1alpha1/tenants/{{tenant_id}}/participant-profiles/{{participant_profile_id}}
+  url: {{hostname}}/api/v1alpha1/tenants/{{tenant_id}}/participant-profiles/{{participant_profile_id}}
   body: json
   auth: inherit
+}
+
+headers {
+  Host: {{tmBaseUrl}}
 }
 
 vars:pre-request {

@@ -5,15 +5,19 @@ meta {
 }
 
 post {
-  url: {{tmBaseUrl}}/api/v1alpha1/tenants/{{tenant_id}}/participant-profiles
+  url: {{hostname}}/api/v1alpha1/tenants/{{tenant_id}}/participant-profiles
   body: json
   auth: inherit
+}
+
+headers {
+  Host: {{tmBaseUrl}}
 }
 
 body:json {
   {
     "id": "{{$randomAlphaNumeric}}",
-    "identifier": "{{participant_did}}-{{$randomUUID}}",
+    "identifier": "{{participant_did}}-{{$randomNamePrefix}}",
     "properties": {},
     "cellId": "{{cell_id}}",
     "version": 0,

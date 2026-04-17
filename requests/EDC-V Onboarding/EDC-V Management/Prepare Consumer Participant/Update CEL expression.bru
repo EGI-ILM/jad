@@ -5,9 +5,13 @@ meta {
 }
 
 put {
-  url: {{cpBaseUrl}}/api/mgmt/v5beta/celexpressions/{{CEL_EXPR_ID}}
+  url: {{hostname}}/api/mgmt/v5alpha/celexpressions/{{CEL_EXPR_ID}}
   body: json
   auth: inherit
+}
+
+headers {
+  Host: {{cpBaseUrl}}
 }
 
 body:json {

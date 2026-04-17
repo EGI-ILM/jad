@@ -5,9 +5,13 @@ meta {
 }
 
 post {
-  url: {{tmBaseUrl}}/api/v1alpha1/tenants/{{tenant_id}}/participant-profiles
+  url: {{hostname}}/api/v1alpha1/tenants/{{tenant_id}}/participant-profiles
   body: json
   auth: inherit
+}
+
+headers {
+  Host: {{tmBaseUrl}}
 }
 
 body:json {
